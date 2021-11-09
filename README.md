@@ -10,6 +10,8 @@ Changes:
 
 - Turnout app - it uses firebase v9 and whats in the course is v8. Not sure why he can't make a link or reference or add slides with the updated code. It took me foreer to know whats going on - but after much fighting and finally realizing v8 vs. v9 of firebase - I got it all working. 
 
+- I was't using a Mac - this is done is VSCode
+
 See my code vs. his code using Git DIFF's or just download my repo to see the differences in those last 2 apps.
 
 i hope it saves someone hours. Good course other than that.
