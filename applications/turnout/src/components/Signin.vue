@@ -1,49 +1,53 @@
 <template>
-<div class="form-inline">
-  <h3>Sign In</h3>
-  <div class="form-group">
-    <input
-      type="text"
-      placeholder="email"
-      class="form-control"
-      v-model="email"
-    />
-    <input
-      type="password"
-      placeholder="password"
-      class="form-control"
-      v-model="password"
-    >
-    <br>
-    <button class="btn btn-primary" @click="signIn">Sign In</button>
-  </div>
-  <br>
-  <router-link to="/signup">Not a user? Sign up</router-link>
-  <br>
-  <p>{{error.message}}</p>
-</div>
+    <div class="form-inline">
+        <h3>Sign In</h3>
+        <input type="text" 
+            name="password"
+            placeholder="email"
+            class = "form-control"
+            v-model="email"/>
+        <input 
+            type="password" 
+            name="password"
+            placeholder="password"
+            class="form-control"
+            v-model="password"/>
+        <button class="btn btn-primary" @click="signIn">Sign In</button>
+        <br/>
+        <router-link to="/signup">Not a user yet? Sign up</router-link>
+        <br/>
+        <p>{{error.message}}</p>
+        
+    </div>
 </template>
-
 <script>
-import { firebaseApp } from '../firebaseApp'
+import {firebaseApp} from '../firebaseApp'
+import {getAuth, signInWithEmailAndPassword} from 'firebase/auth'
+const auth = getAuth(firebaseApp);
 
 export default {
-  data() {
-    return {
-      email: '',
-      password: '',
-      error: {
-        message: ''
-      }
+    data() {
+        return {
+            email:'',
+            password:'',
+            error: {
+                message:''
+            }
+        }
+    }, 
+    methods: {
+        signIn() {
+            signInWithEmailAndPassword(auth , this.email, this.password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+            })
+            .catch((error)=>{
+                this.error = error;
+                const errorCode = error.code;
+                const errorMessage = error.errorMessage;
+            })
+        }
     }
-  },
-  methods: {
-    signIn() {
-      firebaseApp.auth().signInWithEmailAndPassword(this.email, this.password)
-        .catch(error => {
-          this.error = error
-        })
-    }
-  }
 }
+
 </script>

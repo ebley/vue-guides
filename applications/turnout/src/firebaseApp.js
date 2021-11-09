@@ -1,13 +1,33 @@
-import firebase from 'firebase'
+// Import the functions you need from the SDKs you need
+ import { initializeApp } from "firebase/app";
+ import { getAnalytics } from "firebase/analytics";
+import firebase from 'firebase/app'
+import { getAuth } from "@firebase/auth";
+import {getDatabase, ref} from 'firebase/database';
 
-const config = {
-  apiKey: "AIzaSyCIi5MNGQByYZn1XnqTfoWdO104y0H9rDc",
-  authDomain: "turnout-25be4.firebaseapp.com",
-  databaseURL: "https://turnout-25be4.firebaseio.com",
-  projectId: "turnout-25be4",
-  storageBucket: "turnout-25be4.appspot.com",
-  messagingSenderId: "356391668928"
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyD90fKJBI4C_hBJnh6ua5iNul1ZflTTW3A",
+  authDomain: "turnout-f777f.firebaseapp.com",
+  projectId: "turnout-f777f",
+  storageBucket: "turnout-f777f.appspot.com",
+  messagingSenderId: "207547648905",
+  appId: "1:207547648905:web:5276fba2da30ef68da2f58",
+  measurementId: "G-DNDWW7K0FY"
 };
 
-export const firebaseApp = firebase.initializeApp(config)
-export const eventsRef = firebaseApp.database().ref().child('events')
+
+
+
+
+// Initialize Firebase
+export const firebaseApp = initializeApp(firebaseConfig);
+export const auth = getAuth(firebaseApp);
+export const db =  getDatabase(firebaseApp);
+export const reff =  ref(db);
+
+//export const analytics = getAnalytics(app);

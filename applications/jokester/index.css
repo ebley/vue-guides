@@ -1,15 +1,22 @@
+body {
+    background:#253238;
+}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2C3350;
-  margin-top: 60px;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    text-align:center;
+    color:white;
+    margin-top:60px;
 }
 
-.joke-card {
-  border: 2px solid #2C3350;
-  border-radius: 2px;
-  padding: 5px;
-  margin: 5px;
+.character-card, .item-card, .joke-card {
+    border: 2px solid #00FF00;
+    border-radius:5px;
+    cursor: pointer;
+    margin-bottom:10px;
 }
+.link, link:hover, .link:visited, .link:active {
+    color: #4FC08D;
+}
+

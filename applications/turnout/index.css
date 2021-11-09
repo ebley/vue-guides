@@ -1,28 +1,39 @@
+body {
+    background:#253238;
+}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2C3350;
-  margin-top: 60px;
-  padding-left: 10%;
-  padding-right: 10%;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    text-align:center;
+    color:white;
+    margin-top:60px;
 }
 
+.character-card, .item-card, .joke-card, .event-card {
+    border: 2px solid #00FF00;
+    border-radius:5px;
+    cursor: pointer;
+    margin-bottom:10px;
+}
+.list-group {
+    color:black;
+}
+.link, link:hover, .link:visited, .link:active {
+    color: #4FC08D;
+}
+.upper-right{
+
+    top:0px;
+    position: absolute;
+    width:100%;
+    text-align:right;
+}
 .signout-btn {
-  position: absolute;
-  text-align: right;
-  top: 60px;
-  right: 40px;
-}
-
-.form {
-  padding-left: 10%;
-  padding-right: 10%;
-}
-
-.event-card {
-  border: 2px solid #2C3E50;
-  margin-top: 10x;
-  border-radius: 4px;
+    
+    top:0px;
+   /* right:0px; */
+   
+    text-align:right;
+ 
 }
